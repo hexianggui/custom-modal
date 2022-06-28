@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import {
-  defineComponent,onMounted,ref
+  defineComponent,onMounted,ref, shallowRef
 } from "vue";
 
 
@@ -19,7 +19,7 @@ export default defineComponent({
   props: {
   },
   setup() {
-    const map=ref(null)
+    const map=shallowRef(null)
      /**
      * 地图导入初始化
      */

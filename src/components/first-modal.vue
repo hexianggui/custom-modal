@@ -46,7 +46,6 @@
           background-color: white;
         "
          role="dialog"
-         
         :aria-modal="true"
         :aria-hidden="false"
         :tabindex="-1"
