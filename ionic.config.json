@@ -1,0 +1,8 @@
+{
+  "name": "customModal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue",
+  "id": "c5d7665a"
+}
