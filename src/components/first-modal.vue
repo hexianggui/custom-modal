@@ -2,14 +2,14 @@
   <ion-page>
     <ion-content :fullscreen="true">
       <h1>This is the underlying Modal</h1>
-      <div >
+      <div>
         <p>Error, open IconModal repeatedly</p>
         <ion-button @click="setModalOpen(true)"
           >Open Modal load Amap</ion-button
         >
       </div>
-      <div >
-        <p>How do I get focus custom Modal turned on in Modal </p>
+      <div>
+        <p>How do I get focus custom Modal turned on in Modal</p>
         <ion-button @click="setModalCustomOpen(true)"
           >Open the custom Modal</ion-button
         >
@@ -23,7 +23,14 @@
         </ion-buttons>
       </ion-toolbar>
       <ion-content :fullscreen="true">
-        <amap-test></amap-test>
+        <div v-if="isOpenModal">
+           <div style="text-align: center"><h2>You can get focus</h2></div>
+         <ion-item>
+            <ion-label>FetFocus</ion-label>
+            <ion-input placeholder="You can get focus"></ion-input>
+          </ion-item>
+          <amap-test></amap-test>
+        </div>
       </ion-content>
     </ion-modal>
     <teleport to="body">
@@ -38,6 +45,11 @@
           left: 0px;
           background-color: white;
         "
+         role="dialog"
+        :aria-modal="true"
+        :aria-hidden="false"
+        :tabindex="-1"
+       
       >
         <ion-toolbar color="primary">
           <ion-title>Custom Modal</ion-title>
@@ -52,7 +64,7 @@
             <ion-label>FetFocus</ion-label>
             <ion-input placeholder="Unable to get focus"></ion-input>
           </ion-item>
-           <amap-test></amap-test>
+          <amap-test></amap-test>
         </div>
       </div>
     </teleport>
